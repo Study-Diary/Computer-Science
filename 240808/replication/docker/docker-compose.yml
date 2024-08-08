@@ -1,0 +1,31 @@
+services:
+  mysql-master:
+    image: mysql:latest
+    container_name: mysql-master
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./volumes/master/data:/var/lib/mysql
+      - ./volumes/master/log:/var/log/mysql
+  mysql-slave-1:
+    image: mysql:latest
+    container_name: mysql-slave-1
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./volumes/slave-1/data:/var/lib/mysql
+      - ./volumes/slave-1/log:/var/log/mysql
+  mysql-slave-2:
+    image: mysql:latest
+    container_name: mysql-slave-2
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./volumes/slave-2/data:/var/lib/mysql
+      - ./volumes/slave-2/log:/var/log/mysql
