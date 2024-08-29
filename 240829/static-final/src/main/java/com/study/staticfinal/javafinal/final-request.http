@@ -1,0 +1,11 @@
+###
+POST http://localhost:8080/final/member
+Content-Type: application/json
+
+{
+  "email": "workju1124@gmail.com",
+  "password": "hello1234!@",
+  "age": 27,
+  "name": "김정욱",
+  "gender": "MALE"
+}
