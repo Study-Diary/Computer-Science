@@ -1,5 +1,7 @@
-package com.example.ioc_di;
+package com.example.ioc_di.config;
 
+import com.example.ioc_di.MemberRepository;
+import com.example.ioc_di.MemberService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

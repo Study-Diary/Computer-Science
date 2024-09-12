@@ -1,14 +1,16 @@
 package com.example.ioc_di;
 
+import com.example.ioc_di.config.AppConfig;
+import com.example.ioc_di.config.AppConfig2;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -63,7 +65,6 @@ public class ContainerTest {
             MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
             assertNotNull(memberService);
             assertNotNull(memberService.getMemberRepository());
-            assertNotNull(applicationContext.getBean("groupRepository", GroupRepository.class));
         }
 
     }
@@ -108,6 +109,21 @@ public class ContainerTest {
             assertNotNull(memberService.getMemberRepository(), "MemberRepository 빈이 주입되지 않았습니다.");
         }
 
+    }
+
+    @Nested
+    @SpringBootTest
+    @DisplayName("추상화 테스트")
+    class AbstractTest{
+
+        @Autowired
+        private AbstractService group;
+
+        @Test
+        @DisplayName("구현체가 2개일 때 의존성 주입")
+        public void abstractDuplicate(){
+            assertNotNull(group);
+        }
     }
 
 
