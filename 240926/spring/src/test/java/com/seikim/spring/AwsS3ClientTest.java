@@ -24,6 +24,10 @@ class AwsS3ClientTest {
 		this.s3Client = s3Client;
 	}
 
+	/**
+	 * `@Test`가 붙어있는 메소드는 건드리지 않고 해당 테스트를 성공시켜보세요!
+	 */
+
 	@Test
 	void s3ClientInfoTest() {
 		String serviceName = s3Client.serviceName();
