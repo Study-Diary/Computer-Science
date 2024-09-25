@@ -15,6 +15,9 @@ import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
 
+/**
+ * 현재 작성되어 있는 테스트 코드를 수정하지 않고 테스트를 성공해보세요!
+ */
 @Slf4j
 @SpringBootTest
 class AwsS3ClientTest {
@@ -23,10 +26,6 @@ class AwsS3ClientTest {
 	public AwsS3ClientTest(@Autowired S3Client s3Client) {
 		this.s3Client = s3Client;
 	}
-
-	/**
-	 * `@Test`가 붙어있는 메소드는 건드리지 않고 해당 테스트를 성공시켜보세요!
-	 */
 
 	@Test
 	void s3ClientInfoTest() {
