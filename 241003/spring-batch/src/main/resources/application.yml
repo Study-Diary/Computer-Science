@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-batch
+  datasource:
+    url: jdbc:mysql://localhost:3307/batch
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  sql:
+    init:
+      mode: always
