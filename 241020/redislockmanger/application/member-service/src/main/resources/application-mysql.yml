@@ -1,0 +1,45 @@
+spring:
+  jpa:
+    open-in-view: false
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+        - default
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - mysql
+  jpa:
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+    hibernate:
+      ddl-auto: create
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/redis
+    username: root
+    password: 1234
+---

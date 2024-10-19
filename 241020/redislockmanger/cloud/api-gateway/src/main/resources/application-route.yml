@@ -1,0 +1,7 @@
+service-route:
+  auth: "/auth-service"
+  member: "/member-service"
+
+load-balance:
+  auth: "lb://AUTH-SERVICE"
+  member: "lb://MEMBER-SERVICE"

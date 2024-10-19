@@ -1,0 +1,11 @@
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    /**
+     * `Common Project`는 `Dependencies`를 추가하면 안됩니다.
+     */
+}

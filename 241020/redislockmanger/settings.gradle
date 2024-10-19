@@ -1,0 +1,20 @@
+rootProject.name = 'redis-lock-manager'
+
+include ':application'
+include ':application:member-service'
+
+include ':client'
+include ':client:web-core'
+
+include ':cloud'
+include ':cloud:api-gateway'
+include ':cloud:eureka'
+
+include ':domain'
+include ':domain:mysql-core'
+include ':domain:mysql-member-domain'
+include ':domain:redis-core'
+include ':domain:redis-red-lock'
+
+include ':common'
+include ':common:exception'
