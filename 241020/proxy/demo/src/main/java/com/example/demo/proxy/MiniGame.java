@@ -1,6 +1,6 @@
 package com.example.demo.proxy;
 
-public class MiniGame implements canMiniGame {
+public class MiniGame implements CanMiniGame {
 
     private String userName;
 

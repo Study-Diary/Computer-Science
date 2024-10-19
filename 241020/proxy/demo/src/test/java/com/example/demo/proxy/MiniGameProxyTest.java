@@ -4,13 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MiniGameTest {
+class MiniGameProxyTest {
 
     @Test
-    void gameTest(){
-
-        MiniGame miniGame = new MiniGame();
-        miniGame.setUserName("쥴리");
+    void miniGameTestProxy(){
+        CanMiniGame miniGame = new MiniGameProxy();
+        miniGame.setUserName("쥴리"); // 실제 객체는 생성되지 않았다.
         miniGame.welcomeMessage();
 
         // 사용자 입력에 따라 게임 실행
@@ -23,8 +22,9 @@ class MiniGameTest {
 
     @Test
     void onlyWelcomeProxy(){
-        CanMiniGame miniGame = new MiniGame();
+        CanMiniGame miniGame = new MiniGameProxy();
         miniGame.setUserName("쥴리"); // 실제 객체는 생성되지 않았다.
         miniGame.welcomeMessage();
     }
+
 }
