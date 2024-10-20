@@ -1,0 +1,16 @@
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+
+dependencies {
+    /* Redis */
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'com.github.codemonstur:embedded-redis:1.4.3'
+
+    /* Junit Test */
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}

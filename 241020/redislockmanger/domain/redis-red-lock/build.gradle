@@ -1,0 +1,13 @@
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    /* Spring Boot */
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    /* Redis */
+    implementation 'org.redisson:redisson-spring-boot-starter:3.37.0'
+}
